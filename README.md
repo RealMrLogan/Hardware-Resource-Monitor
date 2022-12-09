@@ -1,10 +1,11 @@
 # Hardware Resource Monitor
-- React, Electron, Remote Sensor Monitor (RSM), HWiNFO64
+React, Electron, Remote Sensor Monitor (RSM), HWiNFO64
 
 Opens an electron app that displays various sensor metrics
 
 [HWiNFO64](https://www.hwinfo.com/)
-**NOTE: RSM will not work with the portable version, it needs to be installed**
+
+**NOTE: RSM will not work with the portable version onHWiNFO64**
 
 **NOTE: HWiNFO64 must be running before RSM can run, otherwise you will get null data.**
 
