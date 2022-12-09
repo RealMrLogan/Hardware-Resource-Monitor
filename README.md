@@ -18,3 +18,5 @@ npm i
 ```bash
 npm run dev
 ```
+
+For those who aren't familiar, all React (frontend) code is managed in `src/`. All Electron (main) code runs in `public/main.js`.
