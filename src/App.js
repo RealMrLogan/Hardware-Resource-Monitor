@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Children } from "react"
+import useRemoteSensorMonitor from "./useRemoteSensorMonitor"
 
 function App() {
+  const data = useRemoteSensorMonitor()
+  console.log({ data })
+
+  if (!data || !data.length) return null
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <table>
+      <thead>
+        <tr>
+          {Children.toArray(
+            Object.keys(data[0]).map((key) => <th>{key}</th>)
+          )}
+        </tr>
+      </thead>
+      <tbody>
+        {Children.toArray(
+          data.map((obj) => (
+            <tr>
+              {Children.toArray(Object.values(obj).map((value) => <td>{value}</td>))}
+            </tr>
+          ))
+        )}
+      </tbody>
+    </table>
+  )
 }
 
-export default App;
+export default App
